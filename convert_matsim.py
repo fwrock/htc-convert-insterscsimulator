@@ -13,11 +13,12 @@ from src.splitter import (
     split_and_save
 )
 from src.simulation_gen import generate_simulation_config
-from src.utils import logger, create_output_dir
+from src.utils import logger, create_output_dir, generate_actor_id
 from src.models import (
     NODE_ACTOR_PREFIX, LINK_ACTOR_PREFIX, CAR_ACTOR_PREFIX,
     NODE_RESOURCE_PREFIX, LINK_RESOURCE_PREFIX, CAR_RESOURCE_PREFIX
 )
+
 
 def main():
     ap = argparse.ArgumentParser(description="Converts MATSim files (network, plans) to InterSCITY HTC JSON format.")

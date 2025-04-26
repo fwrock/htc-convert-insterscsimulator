@@ -27,14 +27,14 @@ It splits the data of nodes, links, and cars (trips) into multiple JSON files ba
 1. Clone the repository (or copy the files).
 2. Create a virtual environment
     ```bash
-    python3 -m venv myenv
+    python3 -m venv htc-coverter-renv
     ```
 3. Activate the virtual environment
     ```bash
-    source myenv/bin/activate   # On Linux/macOS
+    source htc-coverter-renv/bin/activate   # On Linux/macOS
     ```
     ```bash
-     .\myenv\Scripts\activate   # On Windows
+     .\htc-coverter-renv\Scripts\activate   # On Windows
     ```
 4. Install the dependencies:
 
@@ -44,7 +44,7 @@ It splits the data of nodes, links, and cars (trips) into multiple JSON files ba
 
 ## Usage
 
-Run the main script `convert_matsim.py` from the root directory (`matsim-converter/`) providing the paths to the input files and other desired options.
+Run the main script `convert_matsim.py` from the root directory (`htc-converter-matsim/`) providing the paths to the input files and other desired options.
 
 ```bash
 python convert_matsim.py --network /path/to/your/network.xml --plans /path/to/your/plans.xml [OPTIONS]
