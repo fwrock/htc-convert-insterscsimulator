@@ -1,0 +1,2 @@
+lxml>=4.9.0         # Para parsing rápido de XML
+python-dateutil>=2.8.0 # Para parse de datas no CLI
