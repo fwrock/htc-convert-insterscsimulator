@@ -25,7 +25,18 @@ It splits the data of nodes, links, and cars (trips) into multiple JSON files ba
 ## Installation
 
 1. Clone the repository (or copy the files).
-2. Install the dependencies:
+2. Create a virtual environment
+    ```bash
+    python3 -m venv myenv
+    ```
+3. Activate the virtual environment
+    ```bash
+    source myenv/bin/activate   # On Linux/macOS
+    ```
+    ```bash
+     .\myenv\Scripts\activate   # On Windows
+    ```
+4. Install the dependencies:
 
     ```bash
     pip install -r requirements.txt
