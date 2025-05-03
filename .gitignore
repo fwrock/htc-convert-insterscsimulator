@@ -1,6 +1,6 @@
 htc-coverter-renv
 htc-coverter-renv/*
 outputs
-outputs/*
+./outputs/* /*.json
 
 src/__pycache__/**

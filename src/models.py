@@ -59,12 +59,14 @@ class DependencyInfo:
     id: str
     resourceId: str
     classType: str
+    actorType: str = "LoadBalancedDistributed"
 
 @dataclasses.dataclass
 class NodeContent:
     startTick: int = 0
     latitude: str = "" # Mapped from 'x'
     longitude: str = "" # Mapped from 'y'
+    scheduleOnTimeManager: bool = False
 
 @dataclasses.dataclass
 class NodeData:
@@ -96,6 +98,7 @@ class LinkContent:
     permlanes: float = 0.0
     modes: List[str] = dataclasses.field(default_factory=list)
     linkType: Optional[str] = None
+    scheduleOnTimeManager: bool = False
 
 @dataclasses.dataclass
 class LinkData:
@@ -133,6 +136,12 @@ class CarData:
 class CarDependencies: # Following the example, depends on origin/destination nodes
     from_node: Optional[DependencyInfo] = None # Represents the origin node
     to_node: Optional[DependencyInfo] = None   # Represents the destination node
+    gps: DependencyInfo = dataclasses.field(default_factory=lambda: DependencyInfo(
+        id="dtmi:org:interscity:model:mobility:actor:gps;1",
+        resourceId="dtmi:org:interscity:model:mobility:resource:gps;1",
+        classType="org.interscity.htc.model.mobility.actor.GPS",
+        actorType="PoolDistributed"
+    )) # Represents the GPS resource
 
 @dataclasses.dataclass
 class CarActor:
