@@ -2,20 +2,20 @@ import dataclasses
 from typing import List, Dict, Optional, Any
 
 # Default prefixes for IDs
-NODE_ACTOR_PREFIX = "dtmi:org:interscity:model:mobility:actor:node;"
-LINK_ACTOR_PREFIX = "dtmi:org:interscity:model:mobility:actor:link;"
-CAR_ACTOR_PREFIX = "dtmi:org:interscity:model:mobility:actor:car;"
+NODE_ACTOR_PREFIX = "htcaid:node;"
+LINK_ACTOR_PREFIX = "htcaid:link;"
+CAR_ACTOR_PREFIX = "htcaid:car;"
 
-NODE_RESOURCE_PREFIX = "dtmi:org:interscity:model:mobility:resource:node;"
-LINK_RESOURCE_PREFIX = "dtmi:org:interscity:model:mobility:resource:link;"
-CAR_RESOURCE_PREFIX = "dtmi:org:interscity:model:mobility:resource:car;"
+NODE_RESOURCE_PREFIX = "htcrid:node;"
+LINK_RESOURCE_PREFIX = "htcrid:link;"
+CAR_RESOURCE_PREFIX = "htcrid:car;"
 
-NODE_CLASS_TYPE = "org.interscity.htc.model.mobility.actor.Node"
-LINK_CLASS_TYPE = "org.interscity.htc.model.mobility.actor.Link"
-CAR_CLASS_TYPE = "org.interscity.htc.model.mobility.actor.Car"
-NODE_STATE_TYPE = "org.interscity.htc.model.mobility.entity.state.NodeState"
-LINK_STATE_TYPE = "org.interscity.htc.model.mobility.entity.state.LinkState"
-CAR_STATE_TYPE = "org.interscity.htc.model.mobility.entity.state.CarState"
+NODE_CLASS_TYPE = "mobility.actor.Node"
+LINK_CLASS_TYPE = "mobility.actor.Link"
+CAR_CLASS_TYPE = "mobility.actor.Car"
+NODE_STATE_TYPE = "mobility.entity.state.NodeState"
+LINK_STATE_TYPE = "model.mobility.entity.state.LinkState"
+CAR_STATE_TYPE = "model.mobility.entity.state.CarState"
 
 # Intermediate structures (after XML parsing)
 @dataclasses.dataclass
@@ -126,6 +126,8 @@ class CarContent:
     origin: str = "" # Will be filled with the node actor ID
     destination: str = "" # Will be filled with the node actor ID
     linkOrigin: str = "" # Will be filled with the link actor ID
+    gpsId: str = "htcaid:gps;1" # Will be filled with the GPS resource ID
+    scheduleOnTimeManager: bool = True
 
 @dataclasses.dataclass
 class CarData:
@@ -137,9 +139,9 @@ class CarDependencies: # Following the example, depends on origin/destination no
     from_node: Optional[DependencyInfo] = None # Represents the origin node
     to_node: Optional[DependencyInfo] = None   # Represents the destination node
     gps: DependencyInfo = dataclasses.field(default_factory=lambda: DependencyInfo(
-        id="dtmi:org:interscity:model:mobility:actor:gps;1",
-        resourceId="dtmi:org:interscity:model:mobility:resource:gps;1",
-        classType="org.interscity.htc.model.mobility.actor.GPS",
+        id="htcaid:gps;1",
+        resourceId="htcrid:gps;1",
+        classType="mobility.actor.GPS",
         actorType="PoolDistributed"
     )) # Represents the GPS resource
 

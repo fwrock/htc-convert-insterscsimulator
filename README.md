@@ -27,14 +27,14 @@ It splits the data of nodes, links, and cars (trips) into multiple JSON files ba
 1. Clone the repository (or copy the files).
 2. Create a virtual environment
     ```bash
-    python3 -m venv htc-coverter-renv
+    python3 -m venv htc-coverter-env
     ```
 3. Activate the virtual environment
     ```bash
-    source htc-coverter-renv/bin/activate   # On Linux/macOS
+    source htc-coverter-env/bin/activate   # On Linux/macOS
     ```
     ```bash
-     .\htc-coverter-renv\Scripts\activate   # On Windows
+     .\htc-coverter-env\Scripts\activate   # On Windows
     ```
 4. Install the dependencies:
 
