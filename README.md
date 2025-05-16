@@ -48,3 +48,4 @@ Run the main script `convert_matsim.py` from the root directory (`htc-converter-
 
 ```bash
 python convert_matsim.py --network /path/to/your/network.xml --plans /path/to/your/plans.xml [OPTIONS]
+# htc-converter-node-links-to-map
